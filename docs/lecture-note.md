@@ -63,3 +63,73 @@ npm run dev
 
 1. ブラウザで `http://localhost:5173/` を開く
 2. Vite のデフォルトページが表示されることを確認
+
+#### デフォルトのコードを消す
+
+Vite のデフォルトページが表示されることを確認できたら、次はデフォルトのコードを削除して、シンプルな状態から始めましょう。
+
+まず不要なファイルを削除します：
+
+- frontend/src/App.css
+- frontend/src/index.css
+- frontend/src/assets/react.svg
+
+削除した内容を参照している main.tsx を変更します：
+
+```diff
+diff --git a/frontend/src/main.tsx b/frontend/src/main.tsx
+index bef5202..4aff025 100644
+--- a/frontend/src/main.tsx
++++ b/frontend/src/main.tsx
+@@ -1,6 +1,5 @@
+ import { StrictMode } from 'react'
+ import { createRoot } from 'react-dom/client'
+-import './index.css'
+ import App from './App.tsx'
+ 
+ createRoot(document.getElementById('root')!).render(
+````
+
+トップページの表示内容を簡素にしましょう：
+
+```diff
+diff --git a/frontend/src/App.tsx b/frontend/src/App.tsx
+index 3d7ded3..39b137f 100644
+--- a/frontend/src/App.tsx
++++ b/frontend/src/App.tsx
+@@ -1,33 +1,7 @@
+-import { useState } from 'react'
+-import reactLogo from './assets/react.svg'
+-import viteLogo from '/vite.svg'
+-import './App.css'
+-
+ function App() {
+-  const [count, setCount] = useState(0)
+-
+   return (
+     <>
+-      <div>
+-        <a href="https://vite.dev" target="_blank">
+-          <img src={viteLogo} className="logo" alt="Vite logo" />
+-        </a>
+-        <a href="https://react.dev" target="_blank">
+-          <img src={reactLogo} className="logo react" alt="React logo" />
+-        </a>
+-      </div>
+-      <h1>Vite + React</h1>
+-      <div className="card">
+-        <button onClick={() => setCount((count) => count + 1)}>
+-          count is {count}
+-        </button>
+-        <p>
+-          Edit <code>src/App.tsx</code> and save to test HMR
+-        </p>
+-      </div>
+-      <p className="read-the-docs">
+-        Click on the Vite and React logos to learn more
+-      </p>
++      <h1>Todo アプリ</h1>
+     </>
+   )
+ }
+```
