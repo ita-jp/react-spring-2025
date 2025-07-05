@@ -1,7 +1,7 @@
-import TopPage from './pages/TopPage'
+import AppRouter from './routes'
 
 function App() {
-  return <TopPage />
+  return <AppRouter />
 }
 
 export default App
