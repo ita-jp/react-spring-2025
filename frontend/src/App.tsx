@@ -1,9 +1,7 @@
+import TopPage from './pages/TopPage'
+
 function App() {
-  return (
-    <>
-      <h1>Todo アプリ</h1>
-    </>
-  )
+  return <TopPage />
 }
 
 export default App
