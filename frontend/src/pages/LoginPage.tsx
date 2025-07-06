@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
 
 export default function LoginPage() {
-  const handleSubmit = () => {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
     console.log('call handleSubmit')
   }
 
