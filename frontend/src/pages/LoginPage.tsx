@@ -1,11 +1,15 @@
 import { Link } from 'react-router-dom'
 
 export default function LoginPage() {
+  const handleSubmit = () => {
+    console.log('call handleSubmit')
+  }
+
   return (
     <div>
       <h1>ログインページ</h1>
       <Link to="/">トップページへ戻る</Link>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">メールアドレス</label>
           <input 
