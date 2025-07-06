@@ -1,9 +1,15 @@
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 export default function LoginPage() {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     console.log('call handleSubmit')
+    console.log('Email:', email)
+    console.log('Password:', password)
   }
 
   return (
@@ -17,6 +23,8 @@ export default function LoginPage() {
             type="email" 
             id="email" 
             name="email" 
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required 
           />
         </div>
@@ -26,6 +34,8 @@ export default function LoginPage() {
             type="password" 
             id="password" 
             name="password" 
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             required 
           />
         </div>
